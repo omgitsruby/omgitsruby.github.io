@@ -1,0 +1,21 @@
+{
+  "name": "omgitsruby.github.io",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/omgitsruby/omgitsruby.github.io.git",
+  "author": "VeryGoodDev <very_good_dev@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "serve ./ -p 9000"
+  },
+  "devDependencies": {
+    "eslint": "^7",
+    "eslint-config-personal": "github:verygooddev/eslint-config-personal",
+    "serve": "^11.3.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "personal"
+    ]
+  }
+}
