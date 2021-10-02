@@ -82,6 +82,10 @@
     tbody tr:nth-child(even) {
       /* background-color: hsl(350, 80%, 75%); */
     }
+    mark {
+      background-color: #ff809f;
+      padding-inline: 2px;
+    }
     footer {
       color: hsl(345.3 50% 90%);
       font-size: small;
@@ -130,19 +134,19 @@
       },
       {
         command: `!brb`,
-        description: `{user.name} went on a quick break, so they may not respond right away`,
+        description: `{username} went on a quick break, so they may not respond right away`,
       },
       {
         command: `!lurk`,
-        description: `{user.name} is now lurking in the shadows...`,
+        description: `{username} is now lurking in the shadows...`,
       },
       {
         command: `!hug`,
-        description: `{user.name} gives {target.name} a great big hug! <3`,
+        description: `{username} gives {target} a great big hug! <3`,
       },
       {
         command: `!sleep`,
-        description: `{user.name} is headed to sleep... thanks for choosing this stream to be your lullaby!`,
+        description: `{username} is headed to sleep... thanks for choosing this stream to be your lullaby!`,
       },
       {
         command: `!raid`,
@@ -150,11 +154,27 @@
       },
       {
         command: `!back`,
-        description: `{user.name} is back and ready to chat`,
+        description: `{username} is back and ready to chat`,
       },
       {
         command: `!commands`,
         description: `read the list here: https://omgitsruby.github.io/commands/`,
+      },
+      {
+        command: `!unlurk`,
+        description: `{username} emerged from the shadows`,
+      },
+      {
+        command: `!honeycrisp`,
+        description: `gives you the dream address for honeycrisp`,
+      },
+      {
+        command: `!aranciata`,
+        description: `gives you the dream address for aranciata`,
+      },
+      {
+        command: `!acnh`,
+        description: `ruby has 2 islands: honeycrisp (apples) & aranciata (oranges)`,
       },
     ]
 
@@ -163,7 +183,7 @@
       const commandTd = document.createElement(`td`)
       commandTd.textContent = command
       const descriptionTd = document.createElement(`td`)
-      descriptionTd.textContent = description
+      descriptionTd.innerHTML = description.replace(/\{(.+?)\}/g, '<mark>$1</mark>')
       row.append(commandTd, descriptionTd)
       tbody.appendChild(row)
     })
